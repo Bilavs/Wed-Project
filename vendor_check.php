@@ -1,0 +1,28 @@
+<?php
+include("mysql_connect.php");
+$sql="select * from user_details where username='$username' and password='$password'";
+$res=mysql_query($sql);
+$rc=mysql_num_rows($res);
+if($rc>0)
+{
+	$_SESSION["loginfo"]=md5("validuserandpassword");
+	$_SESSION["userid"]=mysql_result($res,0,"vid");
+	$_SESSION["username"]=mysql_result($res,0,"username");
+	$_SESSION["usertype"]=mysql_result($res,0,"vendor_type");
+?>
+<script>
+  alert("hello");
+	location.replace("dashboard.php");
+</script> 
+<?php
+}
+else
+{
+$_SESSION["loginfo"]=md5("invaliduserandpassword");
+ ?>   
+<script>
+	location.replace("loginpage.php");
+</script>
+<?php
+}
+?>

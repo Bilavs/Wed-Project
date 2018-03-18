@@ -1,0 +1,10 @@
+<?php
+session_start();
+$userinfo=$_SESSION["loginfo"];
+$uid=$_SESSION["userid"];
+if(md5("validuserandpassword")!=$userinfo)
+{
+	header("location:loginpage.php");
+}
+$usertype=$_SESSION['client'];
+?>

@@ -1,0 +1,20 @@
+<?php
+$id=$_REQUEST["id"];
+include("mysql_connect.php");
+$sql="select * from outfits_tbl where oid=$id";
+//echo($sql);
+$res=mysql_query($sql);
+$rc=mysql_num_rows($res);
+$oid=mysql_result($res,$c,"oid");
+if($rc>0)
+{
+	if(mysql_result($res,0,"outfit_category")=="Female")
+	{
+		header("Location:female_outfit_details.php?id=".$oid);
+	}
+	else
+	{
+		header("Location:men_outfit_details.php?id=".$oid);
+	}
+    }
+?>

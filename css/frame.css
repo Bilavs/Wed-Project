@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+#rightmain
+{
+width:900px;
+min-height:700px;
+background-color:#FDF6F6;
+float:left;
+margin-left:300px;
+}
+<style type="text/css">
+.textcss
+{
+	width:156px;
+	height:160px;
+	border:3px yellow solid;
+	background-color:green;
+}
+.datastyle
+{
+	border-bottom:2px red solid;
+}
+
+.linkstyle:link
+{
+	font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+	font-size:14px;
+	color:#D318D2;
+	padding:5px;
+}
+.linkstyle:hover
+{
+	color:#FF0206;
+}
+
+</style>
